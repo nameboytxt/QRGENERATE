@@ -2,21 +2,26 @@ function generateQRCode() {
   const link = document.getElementById("link").value;
   const qrCodeConteiner = document.getElementById("qrcode");
   qrCodeConteiner.innerHTML = "";
+  
 
   if (link.trim() !== "") {
+    document.querySelector('.qr-container').classList.add('qr-visible')
     const qr = new QRCode(qrCodeConteiner, {
       text: link,
-      width: 200,
-      height: 200,
+      width: 150,
+      height: 150,
       colorDark : "#000",
 	    colorLight : "#fff",
     });
-    setTimeout(() => {
+    setTimeout(() => { 
       document.getElementById("download").style.display = "block";
       const mensagemSucesso = document.createElement("p");
       mensagemSucesso.textContent = "QR code criado com sucesso ;)"
       mensagemSucesso.style.color = "black";
+      mensagemSucesso.style.fontSize = "0.6em"
+      mensagemSucesso.style.maxWidth = "15ch"
       mensagemSucesso.style.marginTop = "10px";
+      mensagemSucesso.style.marginLeft = "38px";
       qrCodeConteiner.appendChild(mensagemSucesso); 
     }, 500);
   } else {

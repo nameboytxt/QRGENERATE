@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,11 +9,19 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
     <script src="script.js" defer></script>
 </head>
+
 <body>
-    <h2>Gerador QRCode!</h2>
-    <input type="text" id="link" placeholder="Enter link here">
-    <button onclick="generateQRCode()">Generate QR Code</button>
-    <div id="qrcode"></div>
-    <button id="download" style="display:none;" onclick="downloadQRCode()">Download QR Code</button>
+    <div class="container-qr-code">
+        <div class="conteiner-input-text">
+            <h2>Gerador QRCode!</h2>
+            <input type="text" id="link" placeholder="Insira o link aqui!">
+        </div>
+        <button onclick="generateQRCode()">Gerar</button>
+        <div class="qr-container">
+            <div id="qrcode"></div>
+            <button class="download" id="download" style="display:none;" onclick="downloadQRCode()">Download QR Code</button>
+        </div>
+    </div>
 </body>
+
 </html>
